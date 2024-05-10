@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.bookshelf.features.welcome.ui.presentation.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_dashFragment"
+            app:destination="@id/dashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.bookshelf.features.authentication.ui.presentation.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_registrationFragment_to_dashFragment"
+            app:destination="@id/dashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.bookshelf.features.authentication.ui.presentation.LoginFragment"
+        android:label="fragment_login2"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_dashFragment"
+            app:destination="@id/dashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashFragment"
+        android:name="com.example.bookshelf.features.dashboard.ui.presentation.DashFragment"
+        android:label="fragment_dash"
+        tools:layout="@layout/fragment_dash" >
+        <action
+            android:id="@+id/action_dashFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_dashFragment_to_bookInfoDetailsFragment"
+            app:destination="@id/bookInfoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookInfoDetailsFragment"
+        android:name="com.example.bookshelf.features.dashboard.ui.presentation.BookInfoDetailsFragment"
+        android:label="fragment_book_info_details"
+        tools:layout="@layout/fragment_book_info_details" >
+    </fragment>
+</navigation>
